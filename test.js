@@ -1,13 +1,3 @@
-// 1. Преобразовать данные из https://jsonplaceholder.typicode.com/users к виду чтобы укаждого пользователя отобразить только id и username
-// 2. Получить из данных выше список всех эмейлов
-// 3. Вывести пользователя с id === 9
-// 4. Вывести всех пользователей из города 'Lebsackbury'
-// 5. Вывести первых 5 пользователей
-// 6. Вывести всех пользователей в обратном порядке
-// 7. Посчитать сколько всего пользователей
-// 8. Вывести список вебсайтов пользователей которые содержат '.com'
-// 9. Вывести все username которые длиннее 12 символов
-// 10. Привести список всех username где каждый будет в нижнем регистре
 
 const tasks =
 [
@@ -253,3 +243,33 @@ const tasks =
 // 8. Вывести список вебсайтов пользователей которые содержат '.com'
 // 9. Вывести все username которые длиннее 12 символов
 // 10. Привести список всех username где каждый будет в нижнем регистре
+
+const exemple = tasks.map(el => ({id: el.id, username: el.username}));
+console.log({exemple});
+
+const exemple1 = tasks.map(el => ({email: el.email}));
+console.log({exemple1});
+
+const exemple2 = tasks.find(task => task.id === 9);
+console.log({exemple2});
+
+const exemple3 = tasks.filter(task => task.address.city === "Lebsackbury");
+console.log({exemple3});
+
+const exemple4 = tasks.slice(0, 5);
+console.log(exemple4);
+
+const exemple5 = tasks.reverse();
+console.log(exemple5);
+
+const exemple6 = tasks.length;
+console.log('Количество пользователей:', exemple6);
+
+const exemple7 = tasks.filter(task => task.website.includes('.com')).map(task => task.website);
+console.log(exemple7);
+
+const exemple8 = tasks.filter(task => task.username.length > 12).map(task => task.username);
+console.log(exemple8);
+
+const exemple9 = tasks.map(task => task.username.toLowerCase());
+console.log(exemple9);
